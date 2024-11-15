@@ -1,0 +1,442 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <link rel="stylesheet" href="style.css.css">
+    <link rel="icon" type="image/png" sizes="32x32" href="./assets/logo.png">
+    <title>Buy Graphics Card</title>
+</head>
+
+<body>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-md navbar-light">
+        <div class="container-xxl">
+            <a href="#intro" class="navbar-brand">
+                <span class="fw-bold text-secondary">
+                    <i class="bi bi-nvidia"></i>
+                    NVIDIA GeForce
+                </span>
+            </a>
+            <!-- Toggle button for mobile nav -->
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#main-nav"
+                aria-controls="main-nav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <!-- Navbar Links -->
+            <div class="collapse navbar-collapse justify-content-end align-center" id="main-nav">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a href="#intro" class="nav-link active">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#features" class="nav-link active">Features</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#review" class="nav-link active">Review</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#contact" class="nav-link active">Get in touch</a>
+                    </li>
+                    <li class="nav-item ms-2 d-none d-md-inline">
+                        <a href="#price" class="btn btn-outline-secondary">buy now</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <!-- Main image and intro text -->
+    <section id="intro">
+        <div class="container-lg">
+            <div class="row justify-content-center align-items-center">
+                <div class="col-md-5 text-center text-md-start">
+                    <h1>
+                        <div class="display-2">GeForce RTX 4090</div>
+                        <div class="display-5 text-muted">BEYOND FAST</div>
+                    </h1>
+                    <p class="lead my-4 text-muted">The NVIDIA® GeForce RTX™ 4090 is the ultimate GeForce GPU. It brings
+                        an enormous leap in performance, efficiency, and AI-powered graphics. Experience ultra-high
+                        performance gaming, incredibly detailed virtual worlds, unprecedented productivity, and new ways
+                        to create. It’s powered by the NVIDIA Ada Lovelace architecture and comes with 24 GB of G6X
+                        memory to deliver the ultimate experience for gamers and creators.</p>
+                    <a href="#price" class="btn btn-outline-secondary">buy now</a>
+                    <!-- Open offcanvas -->
+                    <a href="#sidebar" class="d-block mt-3" data-bs-toggle="offcanvas" role="button"
+                        aria-controls="sidebar">Explore other Graphics cards</a>
+                </div>
+                <div class="col-md-5 text-center d-none d-md-block">
+                    <!-- Tooltip -->
+                    <span data-bs-toggle="tooltip" data-bs-placement="top" data-bs-title="GeForce RTX 4090">
+                        <img class="img-fluid" src="./assets/4090.jpg" alt="image">
+                    </span>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Pricing plan -->
+    <section id="price" class="bg-light mt-5">
+        <div class="container-lg">
+            <div class="text-center">
+                <h2>Price</h2>
+                <p class="lead text-muted">Choose your Graphics Card</p>
+
+                <div class="row my-5 align-items-center justify-content-center g-0">
+                    <div class="col-8 col-lg-4 col-xl-3">
+                        <div class="card border-0">
+                            <div class="card-body text-center py-4">
+                                <h4 class="card-title">Founders Edition</h4>
+                                <p class="lead card-subtitle">The NVIDIA Founders Edition RTX 4090 delivers exceptional
+                                    performance, dual-fan cooling, sleek design, and 24GB GDDR6X memory.</p>
+                                <p class="display-5 my-4 text-primary fw-bold">$ 1599</p>
+                                <p class="card-text mx-5 text-muted d-none d-lg-block">Lorem ipsum dolor sit amet
+                                    consectetur adipisicing elit.</p>
+                                <a href="#price" class="btn btn-outline-primary btn-lg mg-3">Buy Now</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-9 col-lg-4">
+                        <div class="card border-primary border-2">
+                            <div class="card-header text-center text-primary">Most popular</div>
+                            <div class="card-body text-center py-5">
+                                <h4 class="card-title">ASUS ROG Strix OC</h4>
+                                <p class="lead card-subtitle">The ASUS ROG Strix OC RTX 4090 provides superior
+                                    performance, advanced cooling, overclocking, and customizable RGB.</p>
+                                <p class="display-4 my-4 text-primary fw-bold">$ 2300</p>
+                                <p class="card-text mx-5 text-muted d-none d-lg-block">Lorem ipsum dolor sit amet
+                                    consectetur adipisicing elit.</p>
+                                <a href="#" class="btn btn-outline-primary btn-lg mg-3">Buy Now</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-8 col-lg-4 col-xl-3">
+                        <div class="card border-0">
+                            <div class="card-body text-center py-4">
+                                <h4 class="card-title">Gigabyte AORUS Master</h4>
+                                <p class="lead card-subtitle">The Gigabyte AORUS RTX 4090 features strong performance,
+                                    advanced cooling, and customizable RGB lighting effects.</p>
+                                <p class="display-5 my-4 text-primary fw-bold">$ 1850</p>
+                                <p class="card-text mx-5 text-muted d-none d-lg-block">Lorem ipsum dolor sit amet
+                                    consectetur adipisicing elit.</p>
+                                <a href="#" class="btn btn-outline-primary btn-lg mg-3">Buy Now</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Topics at a glance -->
+    <section id="features">
+        <div class="container-md">
+            <div class="text-center">
+                <h2>Features</h2>
+                <p class="lead text-muted">Let's go beyond your imagination.</p>
+            </div>
+            <div class="row my-5 g-5 justify-content-around align-items-center">
+                <div class="col-6 col-lg-4">
+                    <img src="./assets/csm_GeForce_RTX4090_Packaging_7b38bf2106.jpg" width="480px" class="img-fluid"
+                        alt="graphics card">
+                </div>
+                <div class="col-lg-6">
+                    <!-- Single Accordion Container -->
+                    <div class="accordion" id="featuresAccordion">
+                        <!-- Ada Lovelace Architecture -->
+                        <div class="accordion-item">
+                            <h2 class="accordion-header" id="heading-1">
+                                <button class="accordion-button" type="button" data-bs-toggle="collapse"
+                                    data-bs-target="#features-1" aria-expanded="true" aria-controls="features-1">
+                                    Ada Lovelace Architecture
+                                </button>
+                            </h2>
+                            <div id="features-1" class="accordion-collapse collapse show" aria-labelledby="heading-1"
+                                data-bs-parent="#featuresAccordion">
+                                <div class="accordion-body">
+                                    Built on NVIDIA’s Ada Lovelace architecture, the RTX 4090 provides significant
+                                    performance improvements over the previous Ampere architecture. It brings enhanced
+                                    efficiency, AI capabilities, and ray tracing.
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- CUDA Cores -->
+                        <div class="accordion-item">
+                            <h2 class="accordion-header" id="heading-2">
+                                <button class="accordion-button" type="button" data-bs-toggle="collapse"
+                                    data-bs-target="#features-2" aria-expanded="true" aria-controls="features-2">
+                                    CUDA Cores
+                                </button>
+                            </h2>
+                            <div id="features-2" class="accordion-collapse collapse" aria-labelledby="heading-2"
+                                data-bs-parent="#featuresAccordion">
+                                <div class="accordion-body">
+                                    The RTX 4090 is equipped with 16,384 CUDA cores, which dramatically improves
+                                    parallel processing power, allowing faster rendering times and higher frame rates.
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Additional Accordion Items -->
+                        <!-- Repeat structure as above, incrementing ids and target attributes (e.g., features-3, heading-3) for each feature -->
+
+                        <!-- Example for Power Consumption and Thermal Design -->
+                        <div class="accordion-item">
+                            <h2 class="accordion-header" id="heading-3">
+                                <button class="accordion-button" type="button" data-bs-toggle="collapse"
+                                    data-bs-target="#features-3" aria-expanded="true" aria-controls="features-3">
+                                    Power Consumption and Thermal Design
+                                </button>
+                            </h2>
+                            <div id="features-3" class="accordion-collapse collapse" aria-labelledby="heading-3"
+                                data-bs-parent="#featuresAccordion">
+                                <div class="accordion-body">
+                                    With a power rating of 450W TDP, the RTX 4090 requires a robust power supply (NVIDIA
+                                    recommends at least 850W) and adequate cooling. Most cards come with advanced
+                                    cooling systems to handle the thermal load effectively.
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Continue with additional items as needed -->
+
+                    </div>
+                    <!-- End of Accordion Container -->
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Reviews list -->
+    <section id="review" class="bg-light">
+        <div class="container-lg">
+            <div class="text-center">
+                <h2><i class="bi bi-stars"></i>Product Reviews</h2>
+                <p class="lead">Audience says...</p>
+            </div>
+            <div class="row justify-content-center my-5">
+                <div class="col-lg-8">
+                    <div class="list-group">
+                        <div class="list-group-item py-3">
+                            <div class="pb-2">
+                                <i class="bi bi-star-fill"></i>
+                                <i class="bi bi-star-fill"></i>
+                                <i class="bi bi-star-fill"></i>
+                                <i class="bi bi-star-fill"></i>
+                                <i class="bi bi-star-fill"></i>
+                            </div>
+                            <h5 class="mb-1">A must buy product for every gamers or editors.</h5>
+                            <p class="mb-1">Lorem ipsum dolor sit amet consectetur adipisicing elit. Temporibus enim
+                                natus quasi, nostrum asperiores vitae veniam. Modi, provident iste saepe placeat nihil
+                                dolore dolorem?</p>
+                            <small class="text-muted">Review by Raktim</small>
+                        </div>
+                        <div class="list-group-item py-3">
+                            <div class="pb-2">
+                                <i class="bi bi-star-fill"></i>
+                                <i class="bi bi-star-fill"></i>
+                                <i class="bi bi-star-fill"></i>
+                                <i class="bi bi-star-fill"></i>
+                                <i class="bi bi-star-fill"></i>
+                            </div>
+                            <h5 class="mb-1">A must buy product for every gamers or editors.</h5>
+                            <p class="mb-1">Lorem ipsum dolor sit amet consectetur adipisicing elit. Temporibus enim
+                                natus quasi, nostrum asperiores vitae veniam. Modi, provident iste saepe placeat nihil
+                                dolore dolorem?</p>
+                            <small class="text-muted">Review by Raktim</small>
+                        </div>
+                        <div class="list-group-item py-3">
+                            <div class="pb-2">
+                                <i class="bi bi-star-fill"></i>
+                                <i class="bi bi-star-fill"></i>
+                                <i class="bi bi-star-fill"></i>
+                                <i class="bi bi-star-fill"></i>
+                                <i class="bi bi-star-fill"></i>
+                            </div>
+                            <h5 class="mb-1">A must buy product for every gamers or editors.</h5>
+                            <p class="mb-1">Lorem ipsum dolor sit amet consectetur adipisicing elit. Temporibus enim
+                                natus quasi, nostrum asperiores vitae veniam. Modi, provident iste saepe placeat nihil
+                                dolore dolorem?</p>
+                            <small class="text-muted">Review by Raktim</small>
+                        </div>
+                        <div class="list-group-item py-3">
+                            <div class="pb-2">
+                                <i class="bi bi-star-fill"></i>
+                                <i class="bi bi-star-fill"></i>
+                                <i class="bi bi-star-fill"></i>
+                                <i class="bi bi-star-fill"></i>
+                                <i class="bi bi-star-fill"></i>
+                            </div>
+                            <h5 class="mb-1">A must buy product for every gamers or editors.</h5>
+                            <p class="mb-1">Lorem ipsum dolor sit amet consectetur adipisicing elit. Temporibus enim
+                                natus quasi, nostrum asperiores vitae veniam. Modi, provident iste saepe placeat nihil
+                                dolore dolorem?</p>
+                            <small class="text-muted">Review by Raktim</small>
+                        </div>
+                        <div class="list-group-item py-3">
+                            <div class="pb-2">
+                                <i class="bi bi-star-fill"></i>
+                                <i class="bi bi-star-fill"></i>
+                                <i class="bi bi-star-fill"></i>
+                                <i class="bi bi-star-fill"></i>
+                                <i class="bi bi-star-half"></i>
+                            </div>
+                            <h5 class="mb-1">A must buy product for every gamers or editors.</h5>
+                            <p class="mb-1">Lorem ipsum dolor sit amet consectetur adipisicing elit. Temporibus enim
+                                natus quasi, nostrum asperiores vitae veniam. Modi, provident iste saepe placeat nihil
+                                dolore dolorem?</p>
+                            <small class="text-muted">Review by Raktim</small>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Form -->
+    <!-- Form-control,Form-label,from-select,input-group,input-group-text -->
+    <section id="contact">
+        <div class="container-lg">
+            <div class="text-center">
+                <h2>Get in touch</h2>
+                <p class="lead">Have any curious questions ? Contact me now.</p>
+            </div>
+            <div class="row justify-content-center my-5">
+                <div class="col-lg-6">
+                    <form>
+                        <label for="email" class="form-label">Email address:</label>
+                        <div class="input-group mb-4">
+                            <span class="input-group-text"><i class="bi bi-envelope-fill text-secondary"></i></span>
+                            <input type="email" class="form-control" id="email" placeholder="e.g. xyz@example.com"
+                                required>
+                            <!-- Tooltip -->
+                            <span class="input-group-text">
+                                <i class="bi bi-question-circle text-muted" data-bs-toggle="tooltip"
+                                    data-bs-placement="right" data-bs-title="Give your mail address"></i>
+                            </span>
+                        </div>
+
+                        <label for="name" class="form-label">Name:</label>
+                        <div class="input-group mb-4">
+                            <span class="input-group-text"><i class="bi bi-person-fill text-secondary"></i></span>
+                            <input type="text" id="name" class="form-control" placeholder="e.g. Abc Xyz" required>
+                            <!-- Tooltip -->
+                            <span class="input-group-text">
+                                <i class="bi bi-question-circle text-muted" data-bs-toggle="tooltip"
+                                    data-bs-placement="right" data-bs-title="Do you remember your name ?"></i>
+                            </span>
+                        </div>
+
+                        <label for="subject" class="form-label">What is your question about?</label>
+                        <div class="input-group mb-4">
+                            <span class="input-group-text"><i
+                                    class="bi bi-chat-right-dots-fill text-secondary"></i></span>
+                            <select class="form-select" id="subject">
+                                <option value="pricing" selected>Pricing query</option>
+                                <option value="warranty">Warranty query</option>
+                                <option value="other">Other query</option>
+                            </select>
+                        </div>
+                        <div class="mb-4 mt-5 form-floating">
+                            <textarea class="form-control" id="query" style="height: 140px"
+                                placeholder="query"></textarea>
+                            <label for="query">Your query...</label>
+                        </div>
+                        <div class="mb-4 text-center">
+                            <button type="submit" class="btn btn-outline-secondary">Submit</button>
+                        </div>
+                    </form>
+
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Get updates / Modal Trigger -->
+    <section class="bg-light">
+        <div class="container">
+            <div class="text-center">
+                <h2>Stay in the loop</h2>
+                <p class="lead">Get the latest updates as they happen...</p>
+            </div>
+            <div class="row justify-content-center">
+                <div class="col-md-8 text-center">
+                    <p class="text-muted my-4">
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Minus, id accusantium. Nesciunt vero,
+                        provident, temporibus officia totam nulla ad debitis a ducimus, maiores quia et eaque molestiae
+                        vel nobis laborum mollitia odit nisi incidunt. lorem
+                    </p>
+                    <button class="btn btn-outline-secondary mb-5" data-bs-toggle="modal"
+                        data-bs-target="#reg-modal">Register for updates</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Modal itself -->
+    <div class="modal fade" id="reg-modal" tabindex="-1" aria-labelledby="modal-title" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="modal-title">Get the latest updates</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="close"></button>
+                </div>
+                <div class="modal-body">
+                    <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Iusto iste nostrum blanditiis sint
+                        minima laudantium, explicabo asperiores laborum itaque velit accusamus. Repellat repudiandae
+                        voluptatem vitae placeat incidunt architecto provident, sunt, odit odio officiis ipsam.
+                    </p>
+                    <label for="modal-email" class="form-label">Your Mail address</label>
+                    <input type="email" class="form-control" id="modal-email" placeholder="e.g.xyz@abc.com">
+                </div>
+                <div class="modal-footer">
+                    <button class="btn btn-outline-secondary">Submit</button>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- Offcanvas -->
+    <div class="offcanvas offcanvas-start" tabindex="-1" id="sidebar" aria-labelledby="sidebar-label">
+        <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="sidebar-label">Our other Cards</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="close"></button>
+        </div>
+        <div class="offcanvas-body">
+            <p>
+                Lorem, ipsum dolor sit amet consectetur adipisicing elit. Vel animi odit voluptatum nisi saepe atque
+                placeat, temporibus ad autem eveniet distinctio quibusdam eius perferendis laboriosam sit quasi magnam
+                odio similique.
+            </p>
+            <!-- Dropdown -->
+            <div class="dropdown mt-3">
+                <button class="btn btn-outline-secondary dropdown-toggle" type="button" id="card-dropdown" data-bs-toggle="dropdown">Choose a card title</button>
+                <ul class="dropdown-menu" aria-labelledby="card-dropdown">
+                    <li><a href="#" class="dropdown-item">GeForce RTX 4080 super</a></li>
+                    <li><a href="#" class="dropdown-item">GeForce RTX 4080 ti</a></li>
+                    <li><a href="#" class="dropdown-item">GeForce RTX 4070 ti</a></li>
+                    <li><a href="#" class="dropdown-item">GeForce RTX 4060 super</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <!-- JavaScript -->
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            var tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'))
+            tooltipTriggerList.forEach(function (tooltipTriggerEl) {
+                new bootstrap.Tooltip(tooltipTriggerEl)
+            })
+        });
+
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>
