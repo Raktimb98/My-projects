@@ -9,9 +9,9 @@ class WeatherApp(QWidget):
         self.city_label = QLabel("Enter city name:", self)
         self.city_input = QLineEdit(self)
         self.get_weather_button = QPushButton("Get Weather", self)
-        self.temperature_label = QLabel("31°C", self)
-        self.emoji_label = QLabel("☀️", self)
-        self.description_label = QLabel("Sunny", self)
+        self.temperature_label = QLabel(self)
+        self.emoji_label = QLabel(self)
+        self.description_label = QLabel(self)
         self.initUI()
 
     def initUI(self):
@@ -67,6 +67,50 @@ QLabel#description_label {
     color: green;
 }
 """)
+        
+        self.get_weather_button.clicked.connect(self.get_weather)
+
+    def get_weather(self):
+        api_key = ""
+        city = self.city_input.text()
+        url = f"https://api.openweathermap.org/data/2.5/weather?q={city}&appid={api_key}"
+
+        try:
+            response = requests.get(url)
+            response.raise_for_status()
+            data = response.json()
+            if data["cod"] == 200:
+                self.display_weather(data)
+            
+        except requests.exceptions.HTTPError:
+            match response.status_code:
+                case 400:
+                    self.display_error("Bad request.")
+                case 401:
+                    self.display_error("Invalid API key.")
+                case 403:
+                    self.display_error("Access denied.")
+                case 404:
+                    self.display_error("City not found.")
+                case 429:
+                    self.display_error("Too many requests.")
+                case 500:
+                    self.display_error("Internal server error.")
+                case 502:
+                    self.display_error("Bad gateway.")
+                case 503:
+                    self.display_error("Service unavailable.")
+                case 504:
+                    self.display_error("Gateway timeout.")
+                case _:
+                    self.display_error("An error occurred.\n{response.status_code}")
+        except requests.exceptions.RequestException:
+            pass
+            
+    def display_error(self, message):
+        pass
+    def display_weather(self,data):
+        print(data)
 
 if __name__ == '__main__':
     app = QApplication(sys.argv)
