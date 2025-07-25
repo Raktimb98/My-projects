@@ -3,3 +3,30 @@
     padding: 0;
     box-sizing: border-box;
 }
+.main{
+    background-image: url('./assets/images/bg.jpeg');
+    height: 100vh;
+    position: relative;
+}
+.main .box{
+    height: 80vh;
+    width: 100%;
+    opacity: 0.4;
+    position: absolute;
+    top: 0;
+    background-color: black;
+}
+span img{
+    width: 100px;
+    height: 100px;
+    position: absolute;
+    left: 20px;
+}
+nav{
+    max-width: 80vw;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+}
