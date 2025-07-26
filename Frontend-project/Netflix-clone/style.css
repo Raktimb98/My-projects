@@ -1,32 +1,42 @@
+@import url('https://fonts.googleapis.com/css2?family=Martel+Sans:wght@600&family=Poppins:wght@300;400;700&display=swap');
 *{
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
 }
-.main{
-    background-image: url('./assets/images/bg.jpeg');
-    height: 100vh;
+.main {
+    background-image: url("assets/images/bg.jpeg");
+    background-position: center center;
+    background-size: max(1200px, 100vw);
+    background-repeat: no-repeat;
+    height: 644px;
     position: relative;
 }
-.main .box{
-    height: 80vh;
+.main .box {
+    height: 644px;
     width: 100%;
-    opacity: 0.4;
+    opacity: 0.69;
     position: absolute;
     top: 0;
     background-color: black;
 }
-span img{
-    width: 100px;
-    height: 100px;
-    position: absolute;
-    left: 20px;
-}
-nav{
-    max-width: 80vw;
-    margin: 0 auto;
-    display: flex;
+nav {
+    max-width: 60vw;
     justify-content: space-between;
+    margin: auto;
+    display: flex;
     align-items: center;
-    padding: 20px;
+    height: 100px;
+}
+
+nav img {
+    color: red;
+    width: 130px;
+    position: relative;
+    z-index: 10;
+}
+nav button {
+    position: relative;
+    z-index: 10;
 }
