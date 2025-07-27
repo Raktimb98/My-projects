@@ -5,16 +5,20 @@
     box-sizing: border-box;
     font-family: 'Poppins', sans-serif;
 }
+body {
+    background-color: black;
+    color: white;
+}
 .main {
     background-image: url("assets/images/bg.jpeg");
     background-position: center center;
     background-size: max(1200px, 100vw);
     background-repeat: no-repeat;
-    height: 644px;
+    height: 75vh;
     position: relative;
 }
 .main .box {
-    height: 644px;
+    height: 75vh;
     width: 100%;
     opacity: 0.69;
     position: absolute;
@@ -39,4 +43,78 @@ nav img {
 nav button {
     position: relative;
     z-index: 10;
+}
+.content{
+    font-family: 'Martel Sans', sans-serif;
+    height: calc(100% - 100px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    color: white;
+    position: relative;
+    gap: 23px;
+    padding: 0 30px;
+}
+.content> :nth-child(1) {
+    font-family: 'Poppins', sans-serif;
+    font-weight: bolder;
+    font-size: 48px;
+    text-align: center;
+}
+.content> :nth-child(2) {
+    font-weight: 400;
+    font-size: 24px;
+    text-align: center;
+}
+.content> :nth-child(3) {
+    font-weight: 400;
+    font-size: 20px;
+    text-align: center;
+}
+.separation{
+    height: 5px;
+    background-color: gray;
+    opacity: 0.5;
+}
+.btn {
+    padding: 3px 8px;
+    font-weight: 400;
+    color: white;
+    background-color: rgba(248, 243, 243, 0.021);
+    border-radius: 4px;
+    border: 1px solid white;
+    cursor: pointer;
+
+}
+
+.btn-red {
+    background-color: red;
+    color: white;
+    padding: 3px 24px;
+    font-size: 20px;
+    border-radius: 4px;
+    font-weight: 400;
+    border: none;
+}
+
+.btn-red-sm {
+    background-color: red;
+    color: white;
+    border: none;
+}
+
+.content-buttons {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 16px;
+}
+.main input {
+    padding: 7px 101px 8px 14px;
+    color: white;
+    font-size: 12px;
+    border-radius: 4px;
+    background-color: rgba(23, 23, 23, 0.7);
+    border: 1px solid rgba(246, 238, 238, 0.5);
 }
