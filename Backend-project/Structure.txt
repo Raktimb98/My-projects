@@ -1,0 +1,24 @@
+project-root/
+├── src/
+│   ├── api/             # API routes and controllers
+│   │   ├── v1/          # Versioned API endpoints
+│   │   └── index.js     # Entry point for API routes
+│   ├── controllers/     # Handlers for API requests, orchestrating services
+│   ├── services/        # Business logic and reusable functions
+│   ├── models/          # Database schemas/models (e.g., Mongoose models)
+│   ├── repositories/    # Data access layer, interacting with the database
+│   ├── middlewares/     # Express middleware for authentication, logging, error handling
+│   ├── utils/           # Utility functions (helpers, validators, formatters)
+│   ├── config/          # Application-specific configurations
+│   ├── constants/       # Global constants
+│   └── app.js           # Main application entry point
+├── tests/               # Unit and integration tests
+│   ├── unit/
+│   └── integration/
+├── config/              # Environment-specific configurations (e.g., development, production)
+├── scripts/             # Shell scripts for deployment, database migrations, etc.
+├── docs/                # Project documentation
+├── .env                 # Environment variables
+├── package.json         # Project dependencies and scripts
+├── .gitignore
+└── README.md
