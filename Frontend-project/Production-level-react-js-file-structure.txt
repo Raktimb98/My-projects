@@ -1,0 +1,38 @@
+my-app/
+├── public/                 # Static assets (index.html, manifest, favicons)
+│   ├── index.html
+│   └── ...
+├── src/
+│   ├── assets/             # Static images, icons, fonts, logos
+│   ├── components/         # Reusable UI components (Button, Modal, Card)
+│   │   ├── Button/
+│   │   │   ├── index.jsx
+│   │   │   └── button.css
+│   │   └── Modal/
+│   │       ├── index.jsx
+│   │       └── modal.css
+│   ├── features/           # Feature-based, self-contained modules
+│   │   ├── auth/
+│   │   │   ├── components/     # Feature-specific components (e.g., LoginForm)
+│   │   │   ├── hooks/          # Feature-specific custom hooks (e.g., useAuth)
+│   │   │   ├── pages/          # Root page for the feature (e.g., AuthPage)
+│   │   │   ├── api/            # API calls related to authentication
+│   │   │   └── authSlice.js    # Redux slice or state logic for auth
+│   │   └── posts/
+│   │       ├── components/
+│   │       ├── api/
+│   │       ├── postSlice.js
+│   │       └── PostList.jsx
+│   ├── hooks/              # Global custom hooks (e.g., useDebounce, useFetch)
+│   ├── layouts/            # Wrappers and shells (e.g., Sidebar + Main)
+│   ├── pages/              # Top-level components for routes (e.g., HomePage, DashboardPage)
+│   │   ├── HomePage.jsx
+│   │   └── DashboardPage.jsx
+│   ├── services/           # Shared API logic and configurations (e.g., axios config)
+│   ├── store/              # Global state management (Redux, Zustand)
+│   ├── utils/              # Helper functions and utilities
+│   ├── App.jsx             # Root component with router setup
+│   └── main.jsx            # Entry point for the application
+├── package.json
+├── README.md
+└── ...
