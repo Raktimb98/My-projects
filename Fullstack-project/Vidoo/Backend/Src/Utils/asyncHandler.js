@@ -1,10 +1,11 @@
 //! This is using promise to handle async functions in Express.js
 const asyncHandler = (requestHandler) => {
-  (req, res, next) => {
+  return (req, res, next) => {
     Promise.resolve(requestHandler(req, res, next)).catch((err) => next(err));
   };
 };
-export default asyncHandler;
+
+export { asyncHandler };
 
 //! This is using asyncHandler function to handle errors in async functions in Express.js
 // const asyncHandler = (fn) => async (err, req, res, next) => {
