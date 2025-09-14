@@ -4,11 +4,19 @@ import cookieParser from 'cookie-parser';
 
 const app = express();
 
-
 app.use(express.json({ limit: '10kb' }));
 app.use(express.urlencoded({ extended: true, limit: '10kb' }));
 app.use(express.static('public'));
 app.use(cookieParser());
+
+// Basic routes
+app.get('/', (req, res) => {
+  res.send('Hello World!');
+});
+
+app.get('/about', (req, res) => {
+  res.send('This is THE about page!');
+});
 
 // Routes import and use here
 import userRouter from './Routes/user.routes.js';
