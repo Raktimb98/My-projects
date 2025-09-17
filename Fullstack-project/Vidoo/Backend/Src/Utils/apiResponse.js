@@ -7,3 +7,4 @@ class ApiResponse {
     this.errors = [];
   }
 }
+export default ApiResponse;

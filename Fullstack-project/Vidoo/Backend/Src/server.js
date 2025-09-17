@@ -5,10 +5,6 @@ import connectDB from './DB/index.js'; // should export a promise-returning func
 
 const PORT = Number(process.env.PORT) || 3000;
 
-
-
-
-
 // Start-up sequence: connect DB, then listen
 connectDB()
   .then(() => {
