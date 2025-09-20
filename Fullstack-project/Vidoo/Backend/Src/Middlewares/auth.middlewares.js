@@ -1,8 +1,8 @@
-import { ApiError } from '../Utils/ApiError';
-import { asyncHandler } from '../Utils/asyncHandler';
+import ApiError from '../Utils/apiError.js';
+import { asyncHandler } from '../Utils/asyncHandler.js';
 import jwt from 'jsonwebtoken';
-import User from '../Models/User.model';
-export const verifyJWT = asyncHandler(async (req, res, next) => {
+import { User } from '../Models/User/user.models.js';
+export const verifyJWT = asyncHandler(async (req, _, next) => {
   try {
     const token =
       req.cookies?.accessToken ||
@@ -10,14 +10,16 @@ export const verifyJWT = asyncHandler(async (req, res, next) => {
     if (!token) {
       throw new ApiError(401, 'Unauthorized: No token provided');
     }
-    const decodedToken = jwt.verify(token, process.env.ACCESS_TOKEN_SECRET)
-    const user = await User.findById(decodedToken?._id).select('-password -refreshToken')
-      if (!user) {
-          throw new ApiError(401, 'Unauthorized: User not found');
-      }
+    const decodedToken = jwt.verify(token, process.env.ACCESS_TOKEN_SECRET);
+    const user = await User.findById(decodedToken?._id).select(
+      '-password -refreshToken'
+    );
+    if (!user) {
+      throw new ApiError(401, 'Unauthorized: User not found');
+    }
     req.user = user;
     next();
   } catch (error) {
-    throw new ApiError(401,error?.message || 'Unauthorized: Invalid token' );
+    throw new ApiError(401, error?.message || 'Unauthorized: Invalid token');
   }
 });
