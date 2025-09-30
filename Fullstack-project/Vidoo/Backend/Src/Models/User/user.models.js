@@ -1,3 +1,4 @@
+// Models/User/user.models.js
 import mongoose, { Schema } from 'mongoose';
 import bcrypt from 'bcryptjs';
 import jwt from 'jsonwebtoken';
@@ -27,7 +28,7 @@ const userSchema = new Schema(
     },
     avatar: {
       type: String,
-      default: 'default-avatar.png', // We will use cloudinary for image hosting
+      default: 'default-avatar.png',
       required: true,
     },
     coverImage: {
@@ -58,26 +59,32 @@ userSchema.pre('save', async function (next) {
   next();
 });
 
-userSchema.methods.comparePassword = async function (password) {
-  return await bcrypt.compare(password, this.password);
+userSchema.methods.comparePassword = function (password) {
+  return bcrypt.compare(password, this.password);
 };
 
-userSchema.method.generateAccessToken = function () {
+userSchema.methods.generateAccessToken = function () {
+  if (!process.env.ACCESS_TOKEN_SECRET) {
+    throw new Error('ACCESS_TOKEN_SECRET missing');
+  }
   return jwt.sign(
     { id: this._id, email: this.email },
     process.env.ACCESS_TOKEN_SECRET,
-    {
-      expiresIn: process.env.ACCESS_TOKEN_EXPIRY,
-    }
+    { expiresIn: process.env.ACCESS_TOKEN_EXPIRY || '15m' }
   );
 };
-userSchema.method.generateRefreshToken = function () {
+
+userSchema.methods.generateRefreshToken = function () {
+  if (!process.env.REFRESH_TOKEN_SECRET) {
+    throw new Error('REFRESH_TOKEN_SECRET missing');
+  }
   return jwt.sign(
     { id: this._id, email: this.email },
     process.env.REFRESH_TOKEN_SECRET,
-    {
-      expiresIn: this.process.env.REFRESH_TOKEN_EXPIRY,
-    }
+    { expiresIn: process.env.REFRESH_TOKEN_EXPIRY || '7d' }
   );
 };
-export const User = mongoose.model('User', userSchema);
+
+// Reuse existing model in dev to avoid OverwriteModelError
+export const User =
+  mongoose.models.User || mongoose.model('User', userSchema);
