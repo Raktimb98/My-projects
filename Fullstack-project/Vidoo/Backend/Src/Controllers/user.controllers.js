@@ -4,6 +4,10 @@ import { User } from '../Models/User/user.models.js';
 import { uploadToCloudinary } from '../Utils/cloudinary.js';
 import ApiResponse from '../Utils/apiResponse.js';
 import jwt from 'jsonwebtoken';
+import {
+  deletePreviousImage,
+  extractPublicIdFromUrl,
+} from '../Utils/deletePreviousImage.js';
 
 const generateAccessTokenAndRefreshToken = async (userId) => {
   try {
@@ -243,25 +247,34 @@ const updateAccountDetails = asyncHandler(async (req, res) => {
 
 const updateUserAvatar = asyncHandler(async (req, res) => {
   const avatarLocalPath = req.file?.path;
-  if (!avatarLocalPath) {
-    throw new apiError(400, 'Avatar file is required');
-  }
-  const avatar = await uploadToCloudinary(avatarLocalPath);
-  if (!avatar.url) {
-    throw new apiError(500, 'Error uploading avatar');
-  }
-  const user = await User.findByIdAndUpdate(
-    req.user?._id,
+  if (!avatarLocalPath) throw new apiError(400, 'Avatar file is required');
+
+  const current = await User.findById(req.user._id).select(
+    'avatar avatarPublicId'
+  );
+
+  const uploaded = await uploadToCloudinary(avatarLocalPath);
+  if (!uploaded?.url) throw new apiError(500, 'Error uploading avatar');
+
+  const updated = await User.findByIdAndUpdate(
+    req.user._id,
     {
       $set: {
-        avatar: avatar.url,
+        avatar: uploaded.url,
+        avatarPublicId:
+          uploaded.public_id || extractPublicIdFromUrl(uploaded.url),
       },
     },
     { new: true, runValidators: true }
   ).select('-password -refreshToken');
+
+  const oldPublicId =
+    current?.avatarPublicId || extractPublicIdFromUrl(current?.avatar);
+  deletePreviousImage(oldPublicId);
+
   return res
     .status(200)
-    .json(new ApiResponse(200, user, 'User avatar updated successfully'));
+    .json(new ApiResponse(200, updated, 'User avatar updated successfully'));
 });
 
 const updateUserCoverImage = asyncHandler(async (req, res) => {
