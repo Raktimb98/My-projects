@@ -1,0 +1,76 @@
+# Operating system
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Node.js
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+package-lock.json
+# If you commit lockfiles, remove the line above
+
+# Environment files
+.env
+.env.*.local
+.env.local
+.env.test
+.env.production
+
+# Builds / output
+dist/
+build/
+out/
+coverage/
+*.tgz
+
+# Logs and runtime files
+logs/
+*.log
+pids/
+*.pid
+*.seed
+*.pid.lock
+debug.log
+
+# Database files
+*.sqlite
+*.sqlite3
+*.db
+
+# Docker
+docker-compose.override.yml
+# add any local docker env files
+*.env.*.docker
+
+# IDEs and editors
+.vscode/
+.idea/
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.swp
+*.bak
+
+# Python virtualenvs (if mixing stacks)
+venv/
+env/
+.venv/
+
+# Java / Maven / Gradle (if applicable)
+target/
+*.class
+*.jar
+*.war
+.gradle/
+
+# Misc
+coverage/
+*.local
+secret-keys.*
+
+# Readme file
+README.md
