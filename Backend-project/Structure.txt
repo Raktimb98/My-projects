@@ -22,3 +22,30 @@ project-root/
 ├── package.json         # Project dependencies and scripts
 ├── .gitignore
 └── README.md
+
+(
+# My structure 
+project-root/
+├── server.js
+├── package.json
+├── .env
+├── README.md
+├── config/
+├── docs/
+├── logs/
+├── scripts/
+├── src/
+│   ├── api/
+│   ├── config/
+│   ├── constants/
+│   ├── controllers/
+│   ├── middlewares/
+│   ├── migrations/
+│   ├── models/
+│   ├── repositories/
+│   ├── routes/
+│   ├── services/
+│   ├── utils/
+│   └── app.js
+└── tests/
+)
