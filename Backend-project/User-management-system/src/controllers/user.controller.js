@@ -4,6 +4,7 @@ import { User } from '../models/user.model.js';
 import apiResponse from '../utils/apiResponse.js';
 import jwt from 'jsonwebtoken';
 import mongoose from 'mongoose';
+import bcrypt from 'bcryptjs';
 
 const generateAccessTokenAndRefreshToken = async (userId) => {
   try {
@@ -75,4 +76,48 @@ const validateRefreshToken = async (req, res, next) => {
   }
 };
 
-export { generateAccessTokenAndRefreshToken, validateRefreshToken };
+const registerUser = asyncHandler(async (req, res, next) => {
+  try {
+    const { username, email, fullname, password } = req.body;
+
+    // Validate required fields
+    if ([username, email, fullname, password].some((field) => !field)) {
+      return next(apiError(400, 'All fields are required'));
+    }
+
+    // Check for duplicate username or email
+    const existedUser = await User.findOne({
+      $or: [{ username }, { email }],
+    });
+    if (existedUser) {
+      return next(apiError(409, 'User already exists'));
+    }
+
+    const hashedPassword = await bcrypt.hash(password, 10);
+
+    const newUser = await User.create({
+      username,
+      email,
+      fullname,
+      password: hashedPassword,
+    });
+
+    // Remove sensitive fields before sending response
+    const safeUser = newUser.toObject();
+    delete safeUser.password;
+    delete safeUser.__v;
+
+    return apiResponse(res, 201, 'User registered successfully', {
+      user: safeUser,
+    });
+  } catch (error) {
+    console.error('[RegisterUser]', error);
+    next(apiError(500, 'Registration failed'));
+  }
+});
+
+export {
+  generateAccessTokenAndRefreshToken,
+  validateRefreshToken,
+  registerUser,
+};
