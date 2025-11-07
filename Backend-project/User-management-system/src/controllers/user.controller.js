@@ -116,6 +116,39 @@ const registerUser = asyncHandler(async (req, res, next) => {
   }
 });
 
+const loginUser = asyncHandler(async (req, res, next) => {
+  try {
+    const { username, password } = req.body;
+    if (!username || !password) {
+      return next(apiError(400, 'Username and password are required'));
+    }
+    const user = await User.findOne({
+      $or: [{ username }, { email: username }],
+    });
+
+    if (!user) {
+      return next(apiError(401, 'Invalid username or password'));
+    }
+    const isPasswordValid = await bcrypt.compare(password, user.password);
+    if (!isPasswordValid) {
+      return next(apiError(401, 'Invalid username or password'));
+    }
+    const tokens = await generateAccessTokenAndRefreshToken(user._id);
+    return apiResponse(res, 200, 'Login successful', {
+      user: {
+        id: user._id,
+        username: user.username,
+        email: user.email,
+        fullname: user.fullname,
+      },
+      tokens,
+    });
+  } catch (error) {
+    console.error('[LoginUser]', error);
+    next(apiError(500, 'Login failed'));
+  }
+});
+
 export {
   generateAccessTokenAndRefreshToken,
   validateRefreshToken,
