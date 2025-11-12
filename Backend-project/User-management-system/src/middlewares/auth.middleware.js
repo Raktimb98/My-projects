@@ -1,9 +1,9 @@
-import { ApiError } from '../utils/apiError';
+import { apiError } from '../utils/apiError';
 import { asyncHandler } from '../utils/asyncHandler.js';
 import jwt from 'jsonwebtoken';
 import { User } from '../models/user.model.js';
 
-export const verifyJWT = asyncHandler(async (req, res, next) => {
+export const verifyJWT = asyncHandler(async (req, _, next) => {
   const token =
     req.cookies?.accessToken ||
     (req.headers('Authorization')?.startsWith('Bearer ')
@@ -12,7 +12,7 @@ export const verifyJWT = asyncHandler(async (req, res, next) => {
 
   if (!token) {
     return next(
-      new ApiError('You are not logged in! Please log in to get access.', 401)
+      new apiError('You are not logged in! Please log in to get access.', 401)
     );
   }
 
@@ -24,7 +24,7 @@ export const verifyJWT = asyncHandler(async (req, res, next) => {
   );
   if (!currentUser) {
     return next(
-      new ApiError(
+      new apiError(
         'The user belonging to this token does no longer exist.',
         401
       )
