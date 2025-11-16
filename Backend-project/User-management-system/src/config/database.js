@@ -9,7 +9,9 @@ export const connectDB = async () => {
         useUnifiedTopology: true,
       }
     );
-    console.log(`Connected to Database, HOST: ${connectionInstance.connection.host}`);
+    console.log(
+      `Connected to Database, HOST: ${connectionInstance.connection.host}`
+    );
   } catch (error) {
     console.error('Error connecting to Database:', error);
     process.exit(1);
